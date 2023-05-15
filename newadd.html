@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+    <script src="js/jquery-3.6.4.js"></script>
+    <title>Car-X-change</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $('.user_link').hover(function(){
+                $('#light').css('display', 'none');
+                $('#dark').css('display', 'block');
+            }, function() {
+                $('#light').css('display', 'block');
+                $('#dark').css('display', 'none');
+            });
+        });
+    </script>
+    <nav><div class="navigation">
+        <ul>
+            <li class="logoflex"><img class='logo' src="images/logo.png"></li>
+            <li><a class='topmenu' href="cars.html">Автомобілі</a></li>
+            <li><a class='topmenu' href="sellers.html">Продавці</a></li>
+            <li class="user_link"><a style='line-height: 0px;' class="topmenu" href="my_profile.html"><img id="dark" style="display: none;" class='user_img' src="images/user_dark.png"><img id='light' class='user_img' src="images/user.png"></a></li>
+        </ul>
+    </div></nav>
+    <div class="bgcont">
+        <div class="finalformholder">
+            <h2>Нове оголошення</h2>
+            <p>Назва: <input type="text"></p>
+            <p>Ціна: <input type="number"> грн</p>
+            <p>Пробіг: <input type="number"> грн</p>
+            <p>Колір: <input type="text"></p>
+            <p>Привід: <select name="wheel">
+                <!--Supplement an id here instead of using 'name'-->
+                <option value="value1">Задній</option>
+                <option value="value2">Передній</option>
+                <option value="value3">Повний</option>
+            </select></p>
+            <p>Паливо: <select name="fuel">
+                <!--Supplement an id here instead of using 'name'-->
+                <option value="value1">Бензин</option>
+                <option value="value2">Дизель</option>
+                <option value="value3">Електрика</option>
+                <option value="value3">Гібрид</option>
+                <option value="value3">Газ</option>
+            </select></p>
+            <p>Участь у ДТП: <select name="accidents">
+                <!--Supplement an id here instead of using 'name'-->
+                <option value="value1">Не був</option>
+                <option value="value2">Був</option>
+            </select></p>
+            <p>Марка: <select name="brand">
+                <!--Supplement an id here instead of using 'name'-->
+                <option value="value3">-інша-</option>
+                <option value="value1">BMW</option>
+                <option value="value2">Audi</option>
+                <option value="value3">Volkswagen</option>
+                <option value="value3">ЗАЗ</option>
+                <option value="value3">Opel</option>
+                <option value="value3">Toyota</option>
+                <option value="value3">Mitsubishi</option>
+                <option value="value3">Cirtoen</option>
+            </select></p>
+            <p>Коробка передач: <select name="transmission">
+                <!--Supplement an id here instead of using 'name'-->
+                <option value="value1">Механічна</option>
+                <option value="value2">Автоматична</option>
+            </select></p>
+            <p>Опис:<br><textarea name="description"></textarea></p>
+            <button>Створити</button>
+        </div>
+    </div>
+    <div class="footer">
+        <ul>
+            <li><p>Контакти:</p></li>
+            <li><p>@DasPanzerschiff</p></li>
+            <li><p>aoleg1706@gmail.com</p></li>
+            <li><p>+38 096 943 13 19</p></li>
+            <li><p>Офіс:</p></li>
+            <li><p>вулиця Політехнічна, 6, Київ, 02000</p></li>
+        </ul>
+    </div>
+</body>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<head>
+    <title>Car-X-change</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <script src="js/jquery-3.6.4.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $('.user_link').hover(function(){
+                $('#light').css('display', 'none');
+                $('#dark').css('display', 'block');
+            }, function() {
+                $('#light').css('display', 'block');
+                $('#dark').css('display', 'none');
+            });
+        });
+    </script>
+    <nav><div class="navigation">
+        <ul>
+            <li class="logoflex"><img class='logo' src="images/logo.png"></li>
+            <li><a class='topmenu' href="cars.html">Автомобілі</a></li>
+            <li><a class='topmenu' href="sellers.html">Продавці</a></li>
+            <li class="user_link"><a style='line-height: 0px;' class="topmenu" href="my_profile.html"><img id="dark" style="display: none;" class='user_img' src="images/user_dark.png"><img id='light' class='user_img' src="images/user.png"></a></li>
+        </ul>
+    </div></nav>
+    <div class="">
+
+        <div class="main">
+            <div class="detailholder">
+                <img src="images/sellersample.png">
+                <br><h1>Роман Юрійович</h1>
+                <div class="maininfo">
+                
+                <p>Локація: м.Київ</p>
+                <p>Всього оголошень створено: 14</p>
+                <p>Активних оголошень: 5</p>
+            </div>
+            </div>
+            <div class="desc">
+                <h2 style="text-align: center;">Активні оголошення:</h2>
+                <div class="minicarholder">
+                    <div class="minicarad">
+                        <img class="sellpreview" src="images/carsample1.png">
+                        <h3>Роман Юрійович</h3>
+                        <span>
+                            <p>м. Київ</p>
+                            <p>Оголошень створено: 12</p>
+                        <div class="carad_buttons">
+                        <a style='background-color: #FFCA11;' class="detailseller" href="car.html">Переглянути</a>
+                        </div>
+                        </span>
+                    </div>
+                    <div class="minicarad">
+                        <img class="sellpreview" src="images/carsample1.png">
+                        <h3>Роман Юрійович</h3>
+                        <span>
+                            <p>м. Київ</p>
+                            <p>Оголошень створено: 12</p>
+                        <div class="carad_buttons">
+                            <a style='background-color: #FFCA11;' class="detailseller" href="car.html">Переглянути</a>
+                        </div>
+                        </span>
+                    </div>
+                    <div class="minicarad">
+                        <img class="sellpreview" src="images/carsample1.png">
+                        <h3>Роман Юрійович</h3>
+                        <span>
+                            <p>м. Київ</p>
+                            <p>Оголошень створено: 12</p>
+                        <div class="carad_buttons">
+                            <a style='background-color: #FFCA11;' class="detailseller" href="car.html">Переглянути</a>
+                        </div>
+                        </span>
+                    </div>
+                    <div class="minicarad">
+                        <img class="sellpreview" src="images/carsample1.png">
+                        <h3>Роман Юрійович</h3>
+                        <span>
+                            <p>м. Київ</p>
+                            <p>Оголошень створено: 12</p>
+                        <div class="carad_buttons">
+                            <a style='background-color: #FFCA11;' class="detailseller" href="car.html">Переглянути</a>
+                        </div>
+                        </span>
+                    </div>
+                    <div class="minicarad">
+                        <img class="sellpreview" src="images/carsample1.png">
+                        <h3>Роман Юрійович</h3>
+                        <span>
+                            <p>м. Київ</p>
+                            <p>Оголошень створено: 12</p>
+                        <div class="carad_buttons">
+                            <a style='background-color: #FFCA11;' class="detailseller" href="car.html">Переглянути</a>
+                        </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <ul>
+            <li><p>Контакти:</p></li>
+            <li><p>@DasPanzerschiff</p></li>
+            <li><p>aoleg1706@gmail.com</p></li>
+            <li><p>+38 096 943 13 19</p></li>
+            <li><p>Офіс:</p></li>
+            <li><p>вулиця Політехнічна, 6, Київ, 02000</p></li>
+        </ul>
+    </div>
+</body>

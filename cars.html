@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<head>
+    <script src="js/jquery-3.6.4.js"></script>
+    <title>Car-X-change</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+</head>
+<body>
+    <nav><div class="navigation">
+        
+        <ul>
+            <li class="logoflex"><img class='logo' src="images/logo.png"></li>
+            <li><a class='topmenu selectedpage' href="cars.html">Автомобілі</a></li>
+            <li><a class='topmenu' href="sellers.html">Продавці</a></li>
+            <li class="user_link"><a style='line-height: 0px;' class="topmenu" href="my_profile.html"><img id="dark" style="display: none;" class='user_img' src="images/user_dark.png"><img id='light' class='user_img' src="images/user.png"></a></li>
+        </ul>
+    </div></nav>
+
+
+    <div class="main">
+        <script>
+            $(document).ready(function(){
+                $('.user_link').hover(function(){
+                    $('#light').css('display', 'none');
+                    $('#dark').css('display', 'block');
+                }, function() {
+                    $('#light').css('display', 'block');
+                    $('#dark').css('display', 'none');
+                });
+            });
+        </script>
+
+        <script>
+            $(document).ready(function(){
+                var left_obj = $('.rec_or_saved_l');
+                var right_obj = $($('.rec_or_saved_r'));
+                $('.rec_or_saved_r').on( "click", function() {
+                    console.log('clicked! r');
+                    if ($(this).hasClass('rec_or_saved_selected')) {
+                        console.log('r yep');
+                    } else {
+                        console.log('r nope');
+                        right_obj.addClass('rec_or_saved_selected');
+                        left_obj.removeClass('rec_or_saved_selected');
+                    }
+                });
+                $('.rec_or_saved_l').on( "click", function() {
+                    console.log('clicked! l');
+                    if ($(this).hasClass('rec_or_saved_selected')) {
+                        console.log('l yep');
+                    } else {
+                        console.log('l nope');
+                        left_obj.addClass('rec_or_saved_selected');
+                        right_obj.removeClass('rec_or_saved_selected');
+                    }
+                });
+
+            });
+        </script>
+        <script>
+            $(document).ready(function(){
+                $('#ghost, .filterholder').hover(function(){
+                    $('.filterholder').toggleClass('filterholder-view')
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function() {
+                $("#ghost").css("height", $(".filterholder").height());
+            });
+        </script>
+        <script>
+            $(document).ready(function(){
+                $('#ghost2, .helpholder').hover(function(){
+                    $('.helpholder').toggleClass('helpholder-view')
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function() {
+                $("#ghost2").css("height", $(".helpholder").height());
+            });
+        </script>
+        <script>
+            $(document).ready(function(){
+                $(".carad").each(function(){
+                    var width = $(this)[0].scrollWidth;
+                    if (width > 1050) { 
+                        $(this).css("height", 830);
+                    } else if (width > 500) {
+                        $(this).css("height", 500);
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function(){
+                var num = $(".catholder").children().length;
+                if (num == 0) {
+                    $(".catholder").append('<p style="text-align:center">Поки у нас немає доступних моделей.</p>')
+                    $(".filterholder").hide();
+                    $("#ghost").hide();
+                    $(document).ready(function() {
+                        $("footer").css("position", 'fixed');
+                        $("footer").css("bottom", 0);
+                    });
+                } else if ((num > 1) && (num < 5)) {
+                    console.log('yay');
+                    $("footer").css("position", 'absolute');
+                    $("footer").css("top", 350 + $(".filterholder").height());
+                    console.log('yay');
+                }
+            });
+        </script>
+
+        
+        <div class="searchbox">
+            <form class="formbox" method="GET">
+                <img src="images/search.png">
+                <input class="searchfield" placeholder="Пошук" type="textfield" name="search">
+                <input class="subbutton" type="submit" value="">
+            </form>
+            <div class="switcher">
+                <button class="rec_or_saved_selected rec_or_saved_l">Рекомендації</button>
+                <button class="rec_or_saved_r">Збережене</button>
+            </div>
+        </div>
+
+        <div class="additionalblocks">
+        <div class="filterholder" id="userNav">
+            <form class='filtersearchbox' method="GET">
+                <p>Назва моделі:</p>
+                <input type="textfield" name="search">
+                <p>Модельний ряд:</p>
+                <input type="checkbox" name="model" value="X"><label>X</label><br>
+                <input type="checkbox" name="model" value="1"><label>1</label><br>
+                <input type="checkbox" name="model" value="2"><label>2</label><br>
+                <input type="checkbox" name="model" value="3"><label>3</label><br>
+                <input type="checkbox" name="model" value="4"><label>4</label><br>
+                <input type="checkbox" name="model" value="5"><label>5</label><br>
+                <input type="checkbox" name="model" value="6"><label>6</label><br>
+                <input type="checkbox" name="model" value="7"><label>7</label><br>
+                <input type="checkbox" name="model" value="8"><label>8</label><br>
+                <input type="checkbox" name="model" value="Z"><label>Z</label><br>
+                <input type="checkbox" name="model" value="M"><label>M</label><br>
+                <input type="checkbox" name="model" value="i"><label>i</label>
+                <p>Паливо:</p>
+                <input type="checkbox" name="fuel" value="GA"><label>Бензин</label><br>
+                <input type="checkbox" name="fuel" value="DI"><label>Дизель</label><br>
+                <input type="checkbox" name="fuel" value="EL"><label>Електрика</label><br>
+                <input type="checkbox" name="fuel" value="HY"><label>Гібрид</label>
+                <p>Паливо:</p>
+                <input type="checkbox" name="fuel" value="GA"><label>Бензин</label><br>
+                <input type="checkbox" name="fuel" value="DI"><label>Дизель</label><br>
+                <input type="checkbox" name="fuel" value="EL"><label>Електрика</label><br>
+                <input type="checkbox" name="fuel" value="HY"><label>Гібрид</label>
+                <p>Паливо:</p>
+                <input type="checkbox" name="fuel" value="GA"><label>Бензин</label><br>
+                <input type="checkbox" name="fuel" value="DI"><label>Дизель</label><br>
+                <input type="checkbox" name="fuel" value="EL"><label>Електрика</label><br>
+                <input type="checkbox" name="fuel" value="HY"><label>Гібрид</label>
+                <p>Паливо:</p>
+                <input type="checkbox" name="fuel" value="GA"><label>Бензин</label><br>
+                <input type="checkbox" name="fuel" value="DI"><label>Дизель</label><br>
+                <input type="checkbox" name="fuel" value="EL"><label>Електрика</label><br>
+                <input type="checkbox" name="fuel" value="HY"><label>Гібрид</label>
+                <p>Колір:</p>
+                <input type="checkbox" name="color" value="Білий"><label>Білий</label><br>
+                <input type="checkbox" name="color" value="Чорний"><label>Чорний</label><br>
+                <input type="checkbox" name="color" value="Сірий"><label>Сірий</label><br>
+                <input type="checkbox" name="color" value="Синій"><label>Синій</label><br>
+                <input type="checkbox" name="color" value="Червоний"><label>Червоний</label><br>
+                <input type="checkbox" name="color" value="Зелений"><label>Зелений</label><br>
+                <input type="checkbox" name="color" value="Жовтий"><label>Жовтий</label><br>
+                <input type="checkbox" name="color" value="Помаранчевий"><label>Помаранчевий</label><br>
+                <p><input class="filtersubbutton" type="submit" value="Пошук"></p>
+            </form>
+        
+        </div>
+        <div class="helpholder">
+            <h3>Як користуватися сайтом?</h3>
+            <h4>Для покупця:</h4>
+            <p>Обрати машину для покупки можна просто написнувши на кнопку “Переглянути”. Проте продиратись через велику кількість сторінок нам не хочеться. Тож ми додали додаткову навігацію. Зліва ми маєсо фільтри, де ви можете обмежити ціну, пробіг, обрати марку машини, колір, тощо. Також ви можете додавати оголошення до збереженого. Більш того ми додали пошук по продацям. Їх також можна зберігати.</p>
+            <h4>Для продавця:</h4>
+            <p>Зареєструйтеся. Це обов’язково, адже ми намагаємося зменшити кількість спам-оголошень. Вкажіть свої контакти, які будуть показані потенційним покупцям. Створіть оголошення.</p>
+            <h3>Спробуйте прямо зараз!</h3>
+        </div>
+        </div>
+        <div id="ghost">Фільтри</div>
+        <div id="ghost2">Допомога</div>
+        
+        <!-- <h1 style="padding: 3% 20% 0% 20%; text-align: center;">Наш доступний авторяд:</h1> -->
+        <div class="catholder">
+            
+            <div class="carad">
+                <img class="carpreview" src="images/carsample1.png">
+                <h3>Мотоблок Петра</h3>
+                <span>
+                    <p>Ціна: 50.000 грн</p>
+                    <p>Пробіг: 350.000 км</p>
+                <div class="carad_buttons">
+                <a class="detailcat seller" href="seller.html">Більше від продавця</a>
+                <a style='background-color: #FFCA11;' class="detailcat gotoadd" href="car.html">Переглянути</a>
+                </div>
+                </span>
+            </div>
+            <div class="carad">
+                <img class="carpreview" src="images/carsample2.png">
+                <h3>Volkswagen Passat 1994</h3>
+                <span>
+                    <p>Ціна: 78.000 грн</p>
+                    <p>Пробіг: 422.311 км</p>
+                <div class="carad_buttons">
+                    <a class="detailcat seller" href="seller.html">Більше від продавця</a>
+                    <a style='background-color: #FFCA11;' class="detailcat gotoadd" href="car.html">Переглянути</a>
+                </div>
+                </span>
+            </div>
+            <div class="carad">
+                <img class="carpreview" src="images/carsample3.png">
+                <h3>Mercedes-Benz E-Class 1992</h3>
+                <span>
+                    <p>Ціна: 99.000 грн</p>
+                    <p>Пробіг: 10.000 км</p>
+                <div class="carad_buttons">
+                    <a class="detailcat seller" href="seller.html">Більше від продавця</a>
+                    <a style='background-color: #FFCA11;' class="detailcat gotoadd" href="car.html">Переглянути</a>
+                </div>
+                </span>
+            </div>
+            <div class="carad">
+                <img class="carpreview" src="images/carsample4.png">
+                <h3>Hyundai Accent 1995</h3>
+                <span>
+                    <p>Ціна: 77.000 грн</p>
+                    <p>Пробіг: 350.000 км</p>
+                <div class="carad_buttons">
+                    <a class="detailcat seller" href="seller.html">Більше від продавця</a>
+                    <a style='background-color: #FFCA11;' class="detailcat gotoadd" href="car.html">Переглянути</a>
+                </div>
+                </span>
+            </div>
+            <div class="carad">
+                <img class="carpreview" src="images/carsample5.png">
+                <h3>Volkswagen e-Golf 2017</h3>
+                <span>
+                    <p>Ціна: 50.000 грн</p>
+                    <p>Пробіг: 350.000 км</p>
+                <div class="carad_buttons">
+                    <a class="detailcat seller" href="seller.html">Більше від продавця</a>
+                    <a style='background-color: #FFCA11;' class="detailcat gotoadd" href="car.html">Переглянути</a>
+                </div>
+                </span>
+            </div>
+            <div class="carad">
+                <img class="carpreview" src="images/carsample6.png">
+                <h3>Volkswagen Jetta 2011</h3>
+                <span>
+                    <p>Ціна: 1.200.000 грн</p>
+                    <p>Пробіг: 50.000 км</p>
+                <div class="carad_buttons">
+                    <a class="detailcat seller" href="seller.html">Більше від продавця</a>
+                    <a style='background-color: #FFCA11;' class="detailcat gotoadd" href="car.html">Переглянути</a>
+                </div>
+                </span>
+            </div>
+            <div class="carad">
+                <img class="carpreview" src="images/carsample7.png">
+                <h3>Ford Fiesta 2019</h3>
+                <span>
+                    <p>Ціна: 550.000 грн</p>
+                    <p>Пробіг: 11.000 км</p>
+                <div class="carad_buttons">
+                    <a class="detailcat seller" href="seller.html">Більше від продавця</a>
+                    <a style='background-color: #FFCA11;' class="detailcat gotoadd" href="car.html">Переглянути</a>
+                </div>
+                </span>
+            </div>
+            <div class="carad">
+                <img class="carpreview" src="images/carsample8.png">
+                <h3>Mitsubishi ASX 2020</h3>
+                <span>
+                    <p>Ціна: 220.000 грн</p>
+                    <p>Пробіг: 50.000 км</p>
+                <div class="carad_buttons">
+                    <a class="detailcat seller" href="seller.html">Більше від продавця</a>
+                    <a style='background-color: #FFCA11;' class="detailcat gotoadd" href="car.html">Переглянути</a>
+                </div>
+                </span>
+            </div>
+            <div class="carad">
+                <img class="carpreview" src="images/carsample9.png">
+                <h3>Toyota Land Cruiser 2011</h3>
+                <span>
+                    <p>Ціна: 500.000 грн</p>
+                    <p>Пробіг: 450.000 км</p>
+                <div class="carad_buttons">
+                    <a class="detailcat seller" href="seller.html">Більше від продавця</a>
+                    <a style='background-color: #FFCA11;' class="detailcat gotoadd" href="car.html">Переглянути</a>
+                </div>
+                </span>
+            </div>
+            <div class="carad">
+                <img class="carpreview" src="images/carsample10.png">
+                <h3>Toyota Land Cruiser 2020</h3>
+                <span>
+                    <p>Ціна: 50.000 грн</p>
+                    <p>Пробіг: 150.000 км</p>
+                <div class="carad_buttons">
+                    <a class="detailcat seller" href="seller.html">Більше від продавця</a>
+                    <a style='background-color: #FFCA11;' class="detailcat gotoadd" href="car.html">Переглянути</a>
+                </div>
+                </span>
+            </div>
+        </div>
+        <div class="pages">
+            <a href="#">Назад</a>
+            <a href="#">Вперед</a>
+            <form>
+                Перейти до
+                <select name="page">
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                </select>
+                з 23
+            <input type="submit" value="Перейти"></form>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="footer">
+        <ul>
+            <li><p>Контакти:</p></li>
+            <li><p>@DasPanzerschiff</p></li>
+            <li><p>aoleg1706@gmail.com</p></li>
+            <li><p>+38 096 943 13 19</p></li>
+            <li><p>Офіс:</p></li>
+            <li><p>вулиця Політехнічна, 6, Київ, 02000</p></li>
+        </ul>
+    </div>
+</body>
