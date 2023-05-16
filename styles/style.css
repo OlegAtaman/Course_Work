@@ -886,7 +886,7 @@ a:link.detailseller, a:visited.detailseller {
         grid-column-start: 1;
         grid-column-end: 4;
     }
-    .logoflex>img {
+    .logo {
         left: 0;
     }
     .navigation>ul>* {
