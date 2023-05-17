@@ -26,12 +26,12 @@
         </ul>
     </div></nav>
     <div class="bgcont">
-        <div class="finalformholder">
+        <div class="finalformholder"><form method="post" name="newadd">
             <h2>Нове оголошення</h2>
-            <p>Назва: <input type="text"></p>
-            <p>Ціна: <input type="number"> грн</p>
-            <p>Пробіг: <input type="number"> грн</p>
-            <p>Колір: <input type="text"></p>
+            <p>Назва: <input name="title" type="text"></p>
+            <p>Ціна: <input name="price" type="number"> грн</p>
+            <p>Пробіг: <input name="runtime" type="number"> грн</p>
+            <p>Колір: <input name="color" type="text"></p>
             <p>Привід: <select name="wheel">
                 <!--Supplement an id here instead of using 'name'-->
                 <option value="value1">Задній</option>
@@ -69,8 +69,8 @@
                 <option value="value2">Автоматична</option>
             </select></p>
             <p>Опис:<br><textarea name="description"></textarea></p>
-            <button>Створити</button>
-        </div>
+            <button type="submit">Створити</button>
+        </form></div>
     </div>
     <div class="footer">
         <ul>

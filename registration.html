@@ -26,29 +26,29 @@
         </ul>
     </div></nav>
     <div class="bgcont">
-        <div style="margin: 8% auto;" class="finalformholder">
+        <div style="margin: 8% auto;" class="finalformholder"><form method="post" name="registration">
             <h2>Реєстрація</h2>
-            <p>Логін: <input type="text"></p>
-            <p>Пароль: <input type="text"></p>
-            <p>Підтвердження паролю: <input type="text"></p>
-            <p>Ім'я: <input type="text"></p>
-            <p>Контакти: <input class="contacts" type="text"></p>
-            <p>Регіон: <select class='region' name="region">
+            <p>Логін: <input name="login" type="text"></p>
+            <p>Пароль: <input name="password" type="text"></p>
+            <p>Підтвердження паролю: <input name="password_conf" type="text"></p>
+            <p>Ім'я: <input name="full_name" type="text"></p>
+            <p>Контакти: <input name="contacts" class="contacts" type="text"></p>
+            <p>Регіон: <select class='region' name="region" autocomplete="country">
                 <!--Supplement an id here instead of using 'name'-->
-                <option value="value3">-інший-</option>
-                <option value="value1">м.Київ</option>
-                <option value="value2">Київська область</option>
-                <option value="value3">Харківська облась</option>
-                <option value="value3">Дніпропетровська область</option>
-                <option value="value3">Львівська область</option>
-                <option value="value3">Одеська область</option>
-                <option value="value3">Вінницька область</option>
-                <option value="value3">Житомирська область</option>
+                <option value="value1" selected>-інший-</option>
+                <option value="value2">м.Київ</option>
+                <option value="value3">Київська область</option>
+                <option value="value4">Харківська облась</option>
+                <option value="value5">Дніпропетровська область</option>
+                <option value="value6">Львівська область</option>
+                <option value="value7">Одеська область</option>
+                <option value="value8">Вінницька область</option>
+                <option value="value9">Житомирська область</option>
             </select></p>
             <p>Фото профілю: <input type="file" name="profilephoto" id="img" style="display:none;"/>
             <label class="profilephotolabel" for="img">-Завантажити-</label></p>
-            <button>Зареєструватися</button>
-        </div>
+            <button type="submit">Зареєструватися</button>
+        </form></div>
     </div>
     <div class="footer">
         <ul>
